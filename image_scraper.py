@@ -77,10 +77,10 @@ def getImageURLS(name, total_imgs, driver=driver):
             img_count = len(image_urls)
 
             if img_count >= total_imgs:
-                #print("Found {} image links".format(img_count))
+                print("Found {} image links".format(img_count))
                 break
             else:
-                #print("Found:", img_count, "looking for more image links ...")
+                print("Found:", img_count, "looking for more image links ...")
                 driver.execute_script("document.querySelector('.mye4qd').click();")
                 results_start = len(thumbnails)
     return image_urls
@@ -129,7 +129,7 @@ search_query = ["warlock", "wizard", "sorceror", "cleric", "paladin", 'fighter',
 search_query.sort()
 print(search_query)
 dest_dir = os.getcwd()
-total_imgs = 15
+total_imgs = 300
 
 
 scrape_to_folder(search_query, "dnd 5e", dest_dir, total_imgs, driver=driver)
